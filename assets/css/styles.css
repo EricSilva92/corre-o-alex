@@ -9,10 +9,8 @@
     --color-gradient-end: rgba(90, 22, 24, 0.95);
 }
 
-/* Importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* Reset e estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -26,19 +24,24 @@ body {
     background: var(--color-dark);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif; /* Aplica a mesma fonte aos cabeçalhos */
+}
+
+p {
+    font-family: 'Nunito', sans-serif; /* Aplica a mesma fonte aos parágrafos */
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-
-/* Header */
 header {
     background-color: #FFD700;
     padding: 20px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,29 +54,23 @@ header {
     margin: 0 auto;
 }
 
+.offer, .price {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .offer {
-text-align: center;
-margin: auto;
-font-size: 1.5rem;
-font-weight: bold;
-color: var(--color-accent);
-cursor: pointer;
+    color: var(--color-accent);
+    cursor: pointer;
 }
 
 .price {
-    text-align: center;
-    margin: auto;
-    font-size: 1.5rem;
-    font-weight: bold;
     color: white;
 }
-/* Hero Section */
+
 .hero {
-    background: linear-gradient(
-        var(--color-gradient-start),
-        var(--color-gradient-end)
-    ),
-    url('path/to/hero-image.jpg') center/cover;
+    background: linear-gradient(var(--color-gradient-start), var(--color-gradient-end)), url('path/to/hero-image.jpg') center/cover;
     padding: 80px 0;
     text-align: center;
     border-bottom: 5px solid var(--color-accent);
@@ -94,16 +91,71 @@ cursor: pointer;
     color: var(--color-light);
 }
 
-/* Seções Gerais */
 section {
     padding: 80px 0;
 }
 
+.learning {
+    text-align: center;
+}
 
+.learning-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-/* Seção de Celebridades */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.celebrity-card {
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .celebrities {
-    background-color: var(--color-dark);
+    background-color: var(--color-tertiary);
     padding: 60px 0;
 }
 
@@ -112,13 +164,6 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     margin-top: 40px;
-}
-
-.celebrities-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 20px;
 }
 
 .celebrity-card {
@@ -134,19 +179,21 @@ section {
 }
 
 .celebrity-image {
-    width: 100%;
+    width: 90px;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
 }
 
+.celebrity-card:hover .celebrity-image {
+    transform: scale(1.1);
+}
+
 .celebrity-name {
-    font-size: 1.2rem;
-    font-weight: bold;
     margin-top: 10px;
+    font-size: 1.2rem;
     color: #333;
-    text-align: center;
 }
 
 .expanded-image {
@@ -177,12 +224,25 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* Seção de Benefícios */
 .benefits {
-    background-color: var(--color-tertiary);
+    background-color: #D4AF37;
     position: relative;
+    text-align: center;
 }
 
+.benefits h2, .benefits h3 {
+    color: #2A0D0E;
+}
+
+.benefits .cta-button {
+    background-color: #2A0D0E;
+    color: #D4AF37;
+}
+
+.benefits .cta-button:hover {
+    background-color: #9e801f;
+    color: #2A0D0E;
+}
 
 .benefits::before {
     content: '';
@@ -204,7 +264,7 @@ h2 {
     border-radius: 10px;
     margin-bottom: 20px;
 }
-/* Seção de Bônus */
+
 .bonus {
     background-color: #8B5A2B;
     color: #fff;
@@ -219,7 +279,6 @@ h2 {
     font-size: 1.3rem;
 }
 
-/* Seção CTA */
 .cta {
     background-color: #EDD5A1;
     text-align: center;
@@ -231,7 +290,6 @@ h2 {
     margin: 0 auto;
 }
 
-/* Botão CTA */
 .cta-button {
     display: inline-block;
     background: var(--color-accent);
@@ -256,17 +314,14 @@ h2 {
     color: var(--color-accent);
 }
 
-/* Centralizando o contêiner dos botões */
 .cta-container, .price-container, .offer-container {
     text-align: center;
 }
-
 
 .limited-time {
     color: #f7f7f7;
 }
 
-/* Seção de Resultados */
 .results {
     background-color:#FFD700;
     color: #2A0D0E;
@@ -280,7 +335,7 @@ h2 {
     background-color: #D4AF37;
 }
 
-.testimonials h2{
+.testimonials h2 {
     color: #333;
 }
 
@@ -292,20 +347,18 @@ h2 {
 }
 
 .video-container iframe {
-    flex: 1 1 calc(33.33% - 20px); /* 50% para dois vídeos lado a lado, menos o gap */
-    max-width: 50%; /* Ajusta para não ultrapassar o contêiner */
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: 50%;
     margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
     .video-container iframe {
-        flex: 1 1 100%; /* 100% para um vídeo por linha em dispositivos móveis */
+        flex: 1 1 100%;
         max-width: 100%;
     }
 }
 
-/* Seção de Comentários dos Alunos */
-/* Seção de Comentários dos Alunos */
 .student-comments {
     background-color: var(--color-tertiary);
     color: var(--color-light);
@@ -324,105 +377,44 @@ h2 {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
     padding: 20px;
-    background-color: var(--color-dark);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.comment-item blockquote {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-style: italic;
 }
 
 .comment-item p {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1.1rem;
 }
 
-.student-name {
-    font-weight: bold;
-    font-size: 1rem;
-    color: var(--color-accent);
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
-@keyframes slide {
-    0% { transform: translateX(0%); }
-    20% { transform: translateX(0%); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-    100% { transform: translateX(0%); }
+button.prev {
+    left: 10px;
 }
 
-.comments-carousel {
-    animation: slide 20s infinite;
+button.next {
+    right: 10px;
 }
 
-@media (max-width: 768px) {
-    .comment-item p {
-        font-size: 1rem;
-    }
-
-    .student-name {
-        font-size: 0.9rem;
-    }
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-
-/* Seção FAQ */
-.faq {
-    background-color: #fff;
-}
-
-.faq-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Footer */
 footer {
-    background-color: var(--color-dark);
-    color: var(--color-light);
-    padding: 40px 20px;
     text-align: center;
-    border-top: 5px solid var(--color-accent);
 }
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-    }
-
-    section {
-        padding: 40px 0;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    .cta-button {
-        padding: 15px 35px;
-        font-size: 1rem;
-    }
-}
-
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero, .benefits, .celebrities, .offer {
-    animation: fadeInUp 1s ease-out;
-} 

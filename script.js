@@ -1,28 +1,24 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-$(document).ready(function(){
-  $(".comments-carousel").owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      autoplayHoverPause: true,
-      dots: true,
-      responsive: {
-          0: {
-              items: 1
-          },
-          768: {
-              items: 2
-          },
-          992: {
-              items: 3
-          }
-      }
-  });
+jQuery(document).ready(function(){
+    jQuery(".celebrities-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 2,
+                nav: true
+            },
+            1000: {
+                items: 3,
+                nav: true
+            }
+        }
+    });
 });
-</script>
 
 
 
