@@ -24,14 +24,6 @@ body {
     background: var(--color-dark);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Nunito', sans-serif; /* Aplica a mesma fonte aos cabeçalhos */
-}
-
-p {
-    font-family: 'Nunito', sans-serif; /* Aplica a mesma fonte aos parágrafos */
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -179,7 +171,7 @@ button.prev:hover, button.next:hover {
 }
 
 .celebrity-image {
-    width: 90px;
+    width: 85%;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
